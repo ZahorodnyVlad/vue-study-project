@@ -1,14 +1,29 @@
 <template>
   <v-app>
-    <v-navigation-drawer app></v-navigation-drawer>
-    <v-toolbar app></v-toolbar>
-    <v-content>
 
+
+    <v-navigation-drawer app temporary></v-navigation-drawer>
+
+
+    <v-toolbar dark color="primary">
+
+      <v-toolbar-side-icon></v-toolbar-side-icon>
+      <v-toolbar-title>Advert</v-toolbar-title>
+      <v-spacer></v-spacer>
+      <v-toolbar-items class="hidden-sm-and-down">
+        <v-btn flat>Link One</v-btn>
+      </v-toolbar-items>
+
+    </v-toolbar>
+
+
+    <v-content>
 
         <router-view></router-view>
 
-
     </v-content>
+
+
   </v-app>
 </template>
 
