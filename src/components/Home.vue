@@ -7,7 +7,7 @@
                 <v-flex xs12>
                     <v-carousel>
                         <v-carousel-item
-                                v-for="ad in ads"
+                                v-for="ad in promoAds"
                                 :key="ad.id"
                                 :src="ad.imageSrc"
                         >
@@ -53,31 +53,12 @@
 
 <script>
   export default {
-    data () {
-      return {
-        ads: [
-          {
-            title: 'first',
-            description: 'first image',
-            promo: false,
-            imageSrc: 'http://opogode.ua/images/images/524328a760a5e0e716003394.jpg',
-            id: '123'
-          },
-          {
-            title: 'second',
-            description: 'second image',
-            promo: true,
-            imageSrc: 'https://people.in.ua/wp-content/uploads/2017/02/sobaka-1-649x450.jpg',
-            id: '1234'
-          },
-          {
-            title: 'third',
-            description: 'third image',
-            promo: true,
-            imageSrc: 'https://img.depo.ua/745xX/Dec2015/79593.jpg',
-            id: '12345'
-          }
-        ]
+    computed: {
+      promoAds () {
+        return this.$store.getters.promoAds
+      },
+      ads () {
+        return this.$store.getters.ads
       }
     }
   }

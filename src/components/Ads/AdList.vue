@@ -6,7 +6,7 @@
 
                 <v-card
                         class="elevation-10 mb-3"
-                        v-for="ad in ads"
+                        v-for="ad in myAds"
                         :key="ad.id"
                 >
 
@@ -42,24 +42,9 @@
 
 <script>
   export default {
-    data () {
-      return {
-        ads: [
-          {
-            title: 'first',
-            description: 'first image',
-            promo: false,
-            imageSrc: 'http://opogode.ua/images/images/524328a760a5e0e716003394.jpg',
-            id: '123'
-          },
-          {
-            title: 'second',
-            description: 'second image',
-            promo: true,
-            imageSrc: 'https://people.in.ua/wp-content/uploads/2017/02/sobaka-1-649x450.jpg',
-            id: '1234'
-          }
-        ]
+    computed: {
+      myAds () {
+        return this.$store.getters.myAds
       }
     }
   }
